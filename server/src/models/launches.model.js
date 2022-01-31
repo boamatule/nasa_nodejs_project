@@ -16,6 +16,20 @@ launches.set(launch.flightNumber, launch);
 function getAllLaunches() {
 	return Array.from(launches.values());
 }
+
+function addNewLaunch(launch) {
+	latestFlightNumber++;
+	launches.set(
+		latestFlightNumber,
+		Object.assign(launch, {
+			upcoming: true,
+			success: true,
+			customers: ['ZTM', 'SpaceX', 'NASA' ],
+			flightNumber: latestFlightNumber,
+		})
+	);
+}
 module.exports = {
-	getAllLaunches
+	getAllLaunches,
+	addNewLaunch,
 }

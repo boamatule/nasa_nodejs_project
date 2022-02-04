@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-
 const { parse } = require("csv-parse");
 
 const habitablePlanets = [];
@@ -34,11 +33,8 @@ function loadPlanetsData() {
         console.log(error);
         reject(error);
       })
-      .on("end", () => {
-        // console.log(habitablePlanets.map((planet) => {
-        // 	return planet['kepler_name']
-        // }));
-        console.log(`${habitablePlanets.length} habitable planets found!`);
+      .on("end", () => {  
+      console.log(`${habitablePlanets.length} habitable planets found!`);
         resolve();
       });
   });

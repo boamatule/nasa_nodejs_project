@@ -12,24 +12,31 @@ describe("Test GET /launches", () => {
 });
 
 describe("Test POST /launch", () => {
+	const completeLaunchData = {
+		mission: "Raw Gem Enterprize",
+		rocket: "NCC 1701-D",
+		target: "Kepler-186",
+		launchDate: "July 9, 2030",
+	};
+
+	const lauchDataWithoutDate = {
+		mission: "Raw Gem Enterprize",
+		rocket: "NCC 1701-D",
+		target: "Kepler-186",
+	};
+
 	test("It should responde with 201 created", async () => {
 		const response = await request(app)
 			.post("/launches")
-			.send({
-				mission: "Raw Gem Enterprize",
-				rocket: "NCC 1701-D",
-				target: "Kepler-186",
-				launchDate: "July 9, 2030",
-			})
+			.send(completeLaunchData)
 			.expect("Content-Type", /json/)
 			.expect(201);
 
-			const requestDate =
-			expect(response.body).toMatchObject({
-				mission: "Raw Gem Enterprize",
-				rocket: "NCC 1701-D",
-				target: "Kepler-186",
-			});
+		const requestDate = new Date(completeLaunchData.launchDate).valueOf();
+		const responseDate = new Date(response.body.launchDate).valueOf();
+		expect(responseDate).toBe(requestDate);
+
+		expect(response.body).toMatchObject(lauchDataWithoutDate);
 	});
 	test("It should catch missing required properties", () => {});
 	test("It should catch invalid dates", () => {});

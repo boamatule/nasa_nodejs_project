@@ -13,23 +13,23 @@ describe("Test GET /launches", () => {
 
 describe("Test POST /launch", () => {
 	const completeLaunchData = {
-		mission: "Raw Gem Enterprize",
-		rocket: "NCC 1701-D",
-		target: "Kepler-186",
-		launchDate: "July 9, 2030",
+		mission: "Kepler Exploration X",
+		rocket: "Explorer IS1",
+		launchDate: new Date("December 27, 2030"),
+		target: "Kepler-442 b",
 	};
 
 	const lauchDataWithoutDate = {
-		mission: "Raw Gem Enterprize",
-		rocket: "NCC 1701-D",
-		target: "Kepler-186",
+		mission: "Kepler Exploration X",
+		rocket: "Explorer IS1",
+		target: "Kepler-442 b",
 	};
 
 	const launchDataWithInvalidDate = {
-		mission: "Raw Gem Enterprize",
-		rocket: "NCC 1701-D",
-		target: "Kepler-186",
-		launchDate: "Tuffa",
+		mission: "Kepler Exploration X",
+		rocket: "Explorer IS1",
+		launchDate: "Mars",
+		target: "Kepler-442 b",
 	};
 
 	test("It should responde with 201 created", async () => {

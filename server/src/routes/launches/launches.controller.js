@@ -7,8 +7,7 @@ const {
 
 function httpGetAllLaunches(req, res) {
 	return res.status(200).json(getAllLaunches());
-	// return res.status(200).json(launches.value());
-	// return res.status(200).json(Array.from(launches.value()));
+
 }
 
 function httpAddNewLaunch(req, res) {

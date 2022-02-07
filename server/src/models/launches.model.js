@@ -15,16 +15,18 @@ const launch = {
 	success: true,
 };
 
-saveLaunch(launch)
+saveLaunch(launch);
 // launches.set(launch.flightNumber, launch);
 
 function existsLaunchWithId(launchId) {
 	return launches.has(launchId);
 }
 
-function getAllLaunches() {
-	return Array.from(launches.values());
-}
+async function getAllLaunches() {
+	// return Array.from(launches.values());
+	return await launchesDatabase
+		.find({}, { '_id': 0, '__v': 0 });
+};
 
 async function saveLaunch(launch) {
 	await launchesDatabase.updateOne(

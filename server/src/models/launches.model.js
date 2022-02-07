@@ -1,3 +1,4 @@
+// const launches = require("./launches.mongo");
 const launches = new Map();
 
 let latestFlightNumber = 100;
@@ -23,13 +24,9 @@ function getAllLaunches() {
 	return Array.from(launches.values());
 }
 
-// function getAllLaunches(req, res) {
-// 	return res.status(200).json(Array.from(launches.values()));
-// }
-
 function addNewLaunch(launch) {
 	latestFlightNumber++;
-	
+
 	launches.set(
 		latestFlightNumber,
 		Object.assign(launch, {

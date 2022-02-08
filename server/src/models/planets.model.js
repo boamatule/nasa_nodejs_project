@@ -24,13 +24,10 @@ function loadPlanetsData() {
 					columns: true,
 				}),
 			)
-			.on("data", async (data) => {
-				if (isHabitablePlanet(data)) {
-					// habitablePlanets.push(data);
-					await planets.updateOne({
-						keplerName: data.kepler_name,
-					});
-				}
+			.on('data', async (data) => {
+        if (isHabitablePlanet(data)) {
+          savePlanet(data);
+        }
 			})
 			.on("error", (error) => {
 				console.log(error);
@@ -71,5 +68,4 @@ async function savePlanet(planet) {
 module.exports = {
 	loadPlanetsData,
 	getAllPlanets,
-	savePlanet,
 };

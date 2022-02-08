@@ -42,12 +42,12 @@ async function populateLaunches() {
 		},
 	});
 
-	if (response.status !==200) {
-		console.log('Problem downloading launch data')
-		throw new Error('Launch data download failed')
+	if (response.status !== 200) {
+		console.log("Problem downloading launch data");
+		throw new Error("Launch data download failed");
 	}
-	const launchDocs = response.data.docs;
 
+	const launchDocs = response.data.docs;
 	for (const launchDoc of launchDocs) {
 		const payloads = launchDoc["payloads"];
 		const customers = payloads.flatMap((payload) => {
@@ -63,7 +63,9 @@ async function populateLaunches() {
 			success: launchDoc["success"],
 			customers,
 		};
+
 		console.log(`${launch.flightNumber} ${launch.mission}`);
+
 		await saveLaunch(launch);
 	}
 }
@@ -75,7 +77,7 @@ async function loadLaunchData() {
 		mission: "FalconSat",
 	});
 	if (firstLaunch) {
-		console.log("Launch data already loaded!")
+		console.log("Launch data already loaded!");
 	} else {
 		await populateLaunches();
 	}
@@ -100,8 +102,12 @@ async function getLatestFlightNumber() {
 	return latestLaunch.flightNumber;
 }
 
-async function getAllLaunches() {
-	return await launchesDatabase.find({}, { _id: 0, __v: 0 });
+async function getAllLaunches(skip, limit) {
+	return await launchesDatabase
+		.find({}, { _id: 0, __v: 0 })
+		.sort({ flightNumber: 1 })
+		.skip(skip)
+		.limit(limit);
 }
 
 async function saveLaunch(launch) {
@@ -154,7 +160,6 @@ module.exports = {
 	loadLaunchData,
 	existsLaunchWithId,
 	getAllLaunches,
-	abortLaunchById,
-	saveLaunch,
 	scheduleNewLaunch,
+	abortLaunchById,
 };

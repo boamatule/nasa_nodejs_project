@@ -1,7 +1,6 @@
 {
   "name": "nasa-project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "install-server": "npm install --prefix server",
@@ -23,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/boamatule/nasa_nodejs_project/issues"
   },
-  "homepage": "https://github.com/boamatule/nasa_nodejs_project#readme"
+  "homepage": "https://github.com/boamatule/nasa_nodejs_project#readme",
+  "description": ""
 }

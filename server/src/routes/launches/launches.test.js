@@ -1,10 +1,13 @@
 const request = require("supertest");
 const app = require("../../app");
+
+const { loadPlanetsData } = require("../../models/planets.model");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
 
 describe("Launches API", () => {
 	beforeAll(async () => {
 		await mongoConnect();
+		await loadPlanetsData();
 	});
 
 	afterAll(async () => {
@@ -26,6 +29,7 @@ describe("Launches API", () => {
 			rocket: "Explorer IS1",
 			launchDate: new Date("December 27, 2030"),
 			target: "Kepler-442 b",
+			launchDate: 'January 4, 2028'
 		};
 
 		const lauchDataWithoutDate = {

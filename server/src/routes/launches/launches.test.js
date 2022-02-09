@@ -4,11 +4,11 @@ const app = require("../../app");
 const { loadPlanetsData } = require("../../models/planets.model");
 const { mongoConnect, mongoDisconnect } = require("../../services/mongo");
 
-describe("Launches API", () => {
-	beforeAll(async () => {
-		await mongoConnect();
-		await loadPlanetsData();
-	});
+describe('Launches API', () => {
+  beforeAll(async () => {
+    await mongoConnect();
+    await loadPlanetsData();
+  });
 
 	afterAll(async () => {
 		await mongoDisconnect();
@@ -27,7 +27,6 @@ describe("Launches API", () => {
 		const completeLaunchData = {
 			mission: "Kepler Exploration X",
 			rocket: "Explorer IS1",
-			launchDate: new Date("December 27, 2030"),
 			target: "Kepler-442 b",
 			launchDate: 'January 4, 2028'
 		};
@@ -41,8 +40,8 @@ describe("Launches API", () => {
 		const launchDataWithInvalidDate = {
 			mission: "Kepler Exploration X",
 			rocket: "Explorer IS1",
-			launchDate: "Mars",
 			target: "Kepler-442 b",
+			launchDate: "Mars",
 		};
 
 		test("It should responde with 201 created", async () => {

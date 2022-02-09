@@ -17,11 +17,16 @@
     "type": "git",
     "url": "git+https://github.com/boamatule/nasa_nodejs_project.git"
   },
+  "keywords": [],
   "author": "",
+<<<<<<< HEAD
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/boamatule/nasa_nodejs_project/issues"
   },
   "homepage": "https://github.com/boamatule/nasa_nodejs_project#readme",
   "description": ""
+=======
+  "license": "ISC"
+>>>>>>> development
 }

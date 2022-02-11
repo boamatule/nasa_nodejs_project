@@ -24,14 +24,14 @@ function loadPlanetsData() {
 					columns: true,
 				}),
 			)
-			.on('data', async (data) => {
-        if (isHabitablePlanet(data)) {
-          savePlanet(data);
-        }
+			.on("data", async (data) => {
+				if (isHabitablePlanet(data)) {
+					savePlanet(data);
+				}
 			})
-			.on("error", (error) => {
-				console.log(error);
-				reject(error);
+			.on("error", (err) => {
+				console.log(err);
+				reject(err);
 			})
 			.on("end", async () => {
 				const countPlanetsFound = (await getAllPlanets()).length;
@@ -42,9 +42,13 @@ function loadPlanetsData() {
 }
 
 async function getAllPlanets() {
-	return await planets.find({}, {
-		'_id' : 0, '__v': 0
-	});
+	return await planets.find(
+		{},
+		{
+			_id: 0,
+			__v: 0,
+		},
+	);
 }
 
 async function savePlanet(planet) {
@@ -60,8 +64,8 @@ async function savePlanet(planet) {
 				upsert: true,
 			},
 		);
-	} catch (error) {
-		console.error(`Could not save planet ${error}`);
+	} catch (err) {
+		console.error(`Could not save planet ${err}`);
 	}
 }
 

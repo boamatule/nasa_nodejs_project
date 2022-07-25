@@ -1,43 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "nasa-fe",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "arwes": "^1.0.0-alpha.5",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^5.0.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "BUILD_PATH=../server/public react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {},
-=======
   "name": "nasa-project",
   "version": "1.0.0",
   "main": "index.js",
@@ -52,27 +13,19 @@
     "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
     "test": "npm test --prefix server && npm test --prefix client"
   },
->>>>>>> 5a733a9219c3eeaa63de216b443b3fc809d16bf0
   "repository": {
     "type": "git",
     "url": "git+https://github.com/boamatule/nasa_nodejs_project.git"
   },
-<<<<<<< HEAD
-=======
   "keywords": [],
->>>>>>> 5a733a9219c3eeaa63de216b443b3fc809d16bf0
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/boamatule/nasa_nodejs_project/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/boamatule/nasa_nodejs_project#readme"
-=======
   "homepage": "https://github.com/boamatule/nasa_nodejs_project#readme",
   "description": "",
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.3"
   }
->>>>>>> 5a733a9219c3eeaa63de216b443b3fc809d16bf0
 }

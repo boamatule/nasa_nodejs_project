@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "nasa-fe",
   "version": "1.0.0",
   "private": true,
@@ -36,14 +37,42 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {},
+=======
+  "name": "nasa-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "npm run server & npm run client",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
+    "test": "npm test --prefix server && npm test --prefix client"
+  },
+>>>>>>> 5a733a9219c3eeaa63de216b443b3fc809d16bf0
   "repository": {
     "type": "git",
     "url": "git+https://github.com/boamatule/nasa_nodejs_project.git"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> 5a733a9219c3eeaa63de216b443b3fc809d16bf0
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/boamatule/nasa_nodejs_project/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/boamatule/nasa_nodejs_project#readme"
+=======
+  "homepage": "https://github.com/boamatule/nasa_nodejs_project#readme",
+  "description": "",
+  "dependencies": {
+    "@graphql-tools/load-files": "^6.5.3"
+  }
+>>>>>>> 5a733a9219c3eeaa63de216b443b3fc809d16bf0
 }

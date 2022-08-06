@@ -1,15 +1,59 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "description": "", 
+  "shortcuts": [
     {
-      "src": "favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "name": "Start Live Session",
+      "short_name": "Start Live",
+      "description": "Jump direction into starting or joining a live session",
+      "url": "/?startLive",
+      "icons": [
+        {
+          "src": "https://pwabuilder.com/assets/icons/icon_192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
+  ], 
+  "screenshots": [
+    {
+      "src": "https://www.pwabuilder.com/assets/screenshots/screen1.png",
+      "sizes": "2880x1800",
+      "type": "image/png",
+      "description": "PWABuilder Home Screen"
+    },
+    {
+      "src": "https://www.pwabuilder.com/assets/screenshots/screen2.png",
+      "sizes": "2880/1800",
+      "type": "image/png",
+      "description": "PWABuilder Report Card"
+    },
+    {
+      "src": "https://www.pwabuilder.com/assets/screenshots/screen3.png",
+      "sizes": "2880x1800",
+      "type": "image/png",
+      "description": "Manifest information on the Report Card"
+    }
+  ], 
+    "name": "Nasa Mission Control",
+    "short_name": "Nasa Mission Control",
+    "icons": [
+      {
+        "src": "/192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+  
+      {
+        "src": "/512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+  }
